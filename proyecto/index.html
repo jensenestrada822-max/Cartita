@@ -2,202 +2,126 @@
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Para Marcelaaaaaa ❤️</title>
-
     <link rel="stylesheet" href="style.css">
-
-    <!-- Fuente elegante -->
+    <!-- Fuentes elegantes -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
-
 </head>
-
 
 <body>
 
-
-    <!-- Fondo de estrellas -->
-
-    <div id="stars"></div>
-    <div id="stars2"></div>
-    <div id="stars3"></div>
-
-    <div class="moon"></div>
-
-
-
-    <!-- Contenido principal -->
-
-    <div class="container">
-
-
-        <h1>
-            For My Love ❤️
-        </h1>
-
-
-        <p class="subtitle">
-
-            te hize un detallito ya que estoy aprendiendo a programar jejej :)
-
-        </p>
-
-
-
-        <button id="startButton">
-
-            Comenzar ✨
-
-        </button>
-
-
-
-        <div class="letter hidden">
-
-
-            <h2>
-                Para ti ❤️
-            </h2>
-
-
-            <p>
-                De: Spidermann :)
-            </p>
-
-
-        </div>
-
-
+    <!-- Fondo de estrellas (Ahora mucho más limpio y animado) -->
+    <div class="stars-container">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
     </div>
 
+    <!-- Luna Fija -->
+    <div class="moon"></div>
 
+    <!-- Contenido principal interactivo -->
+    <div class="container active" id="initial-page">
+        <h1>For My Love ❤️</h1>
+        <p class="subtitle">te hize un detallito ya que estoy aprendiendo a programar jejej :)</p>
+        <button id="startButton">Comenzar ✨</button>
+    </div>
 
-
-
-    <!-- SECCION DEL RECUERDO -->
-
-
-    <section id="recuerdo" class="recuerdo">
-
-
-        <div class="parque">
-
-
-            <div class="siluetas">
-
-
-                <div class="persona persona1"></div>
-
-
-                <div class="persona persona2"></div>
-
-
-                <div class="banca"></div>
-
-
+    <!-- SECCION DEL RECUERDO Y LA CARTA (Oculta al inicio) -->
+    <section id="recuerdo" class="recuerdo container">
+        
+        <div class="parque-container">
+            <div class="parque">
+                <div class="siluetas">
+                    <div class="persona persona1"></div>
+                    <div class="persona persona2"></div>
+                    <div class="banca"></div>
+                </div>
             </div>
-
-
+            <div class="texto-recuerdo">
+                <h2>Desde aquella vez en el parque...</h2>
+                <p>Hay momentos que se quedan guardados para siempre, y ese día es uno de ellos.</p>
+                <p class="frase-grande">No he dejado de pensar en ti ❤️</p>
+            </div>
         </div>
 
-
-
-
-
-        <div class="texto-recuerdo">
-
-
-            <h2>
-                Desde aquella vez en el parque...
-            </h2>
-
-
-
-            <p>
-
-                Hay momentos que se quedan guardados para siempre,
-                y ese día es uno de ellos.
-
-            </p>
-
-
-
-            <p class="frase-grande">
-
-                No he dejado de pensar en ti ❤️
-
-            </p>
-
-
+        <!-- Sección Triángulo Mejorada -->
+        <div class="recuerdo-detalles-focus">
+            <div class="foco-luz">
+                Siempre pienso en tu sonrisa,<br>
+                en tu voz,<br>
+                en tu forma de ser,<br>
+                en cada pequeño detalle que te hace ser tú...
+            </div>
         </div>
 
-
-
-
-
-
-        <div class="triangulo">
-
-
-            Siempre pienso en tu sonrisa,<br>
-
-            en tu voz,<br>
-
-            en tu forma de ser,<br>
-
-            en cada pequeño detalle que te hace ser tú...
-
-
+        <div class="carta-final-trigger">
+            <button id="verCartaButton" class="boton-recuerdo">Ver tu carta ❤️</button>
         </div>
-
-
-
-
-
-
-
-        <div class="carta-final">
-
-
-            <h1>
-
-                Para ti, mi amor ❤️
-
-            </h1>
-
-
-
-            <p>
-
-                Aquí irá toda la carta completa.
-
-                Puedes escribir TODO lo que sientes:
-
-                cuánto la extrañas, recuerdos, momentos,
-
-                cosas que amas de ella...
-
-            </p>
-
-
-        </div>
-
-
-
 
     </section>
 
+    <!-- Sección de la Carta Final y Sorpresas -->
+    <section id="final-card-section" class="final-card container">
+        <div class="mensaje" id="mensajeContainer">
+            <h2>Para ti, mi amor ❤️</h2>
+            <p id="textoCarta"></p>
+            <!-- Botón de Sorpresas que aparecerá al final -->
+            <button id="verSorpresasButton" class="hidden boton-sorpresas">¿Qué eres para mí? 💖</button>
+        </div>
+    </section>
 
+    <!-- Sección de Sorpresas (Oculta al inicio) -->
+    <section id="sorpresas-section" class="sorpresas-section container">
+        <h2>Lo que veo en ti 😍</h2>
+        <div class="sorpresas-grid">
+            
+            <!-- Sorpresa 1: Fuerte -->
+            <div class="sorpresa-item">
+                <button class="sorpresa-btn" onclick="mostrarModal('Eres increíblemente FUERTE 💪', 'Eres la persona más resiliente que conozco. Tu fortaleza me inspira cada día.', 'fuerte.jpg')">Fuerte</button>
+            </div>
+            
+            <!-- Sorpresa 2: Inteligente -->
+            <div class="sorpresa-item">
+                <button class="sorpresa-btn" onclick="mostrarModal('Eres tan INTELIGENTE 🤓', 'Tu mente me deslumbra. Siempre tienes las respuestas perfectas (o los mejores memes).', 'inteligente_meme.png')">Inteligente</button>
+            </div>
+            
+            <!-- Sorpresa 3: Hermosa -->
+            <div class="sorpresa-item">
+                <button class="sorpresa-btn" onclick="mostrarModal('Eres la más HERMOSA ❤️', 'Tu belleza interior y exterior son incomparables. Eres perfecta.', 'hermosa.jpg')">Hermosa</button>
+            </div>
+            
+            <!-- Sorpresa 4: Talentosa -->
+            <div class="sorpresa-item">
+                <button class="sorpresa-btn" onclick="mostrarModal('Eres SÚPER TALENTOSA 🤸‍♀️', 'Tu dedicación en la gimnasia es increíble. ¡Te admiro muchísimo!', 'talentosa_gimnasia.jpg')">Talentosa</button>
+            </div>
+            
+            <!-- Sorpresa 5: Deslumbrante -->
+            <div class="sorpresa-item">
+                <button class="sorpresa-btn" onclick="mostrarModal('Eres DESLUMBRANTE ✨', 'Tu luz propia ilumina cualquier lugar donde estés. Eres única.', 'deslumbrante.png')">Deslumbrante</button>
+            </div>
+            
+            <!-- Sorpresa 6: Perfecta -->
+            <div class="sorpresa-item">
+                <button class="sorpresa-btn" onclick="mostrarModal('Eres PERFECTA PARA MÍ ❤️', 'No cambiaría nada de ti. Eres mi mundo.', 'perfecta.jpg')">Perfecta para mí</button>
+            </div>
 
+        </div>
+    </section>
 
+    <!-- Modal para mostrar imágenes y texto de sorpresas (Un "pop-up") -->
+    <div id="modalSorpresa" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModal()">&times;</span>
+            <h3 id="modalTitle"></h3>
+            <img id="modalImage" src="" alt="Sorpresa">
+            <p id="modalText"></p>
+        </div>
+    </div>
 
     <script src="script.js"></script>
-
-
 </body>
-
 
 </html>
