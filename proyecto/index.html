@@ -24,7 +24,7 @@
 
     <!-- PÁGINA INICIAL -->
     <div class="container active" id="initial-page">
-        <h1>For My Love 💜</h1>
+        <h1>For My Love ❤️</h1>
         <p class="subtitle">te hize un detallito ya que estoy aprendiendo a programar jejej :)</p>
         <button id="startButton">Comenzar ✨</button>
     </div>
@@ -32,48 +32,64 @@
     <!-- SECCIÓN DE LA CARTA FINAL -->
     <section id="final-card-section" class="final-card container">
         <div class="mensaje" id="mensajeContainer">
-            <h2>Para ti, mi amor 💜</h2>
+            <h2>Para mai love ❤️ :)</h2>
             <p id="textoCarta"></p>
             <!-- Botón de Sorpresas que aparecerá al final -->
             <button id="verSorpresasButton" class="hidden boton-sorpresas">¿Qué eres para mí? 💖</button>
         </div>
     </section>
 
-    <!-- SECCIÓN DE SORPRESAS (CORREGIDA CON .JPG) -->
+    <!-- SECCIÓN DE SORPRESAS -->
     <section id="sorpresas-section" class="sorpresas-section container">
         <h2>Lo que veo en ti 😍</h2>
         <div class="sorpresas-grid">
             
             <!-- Sorpresa 1: Fuerte -->
             <div class="sorpresa-item">
-                <button class="sorpresa-btn" onclick="mostrarModal('Eres increíblemente FUERTE 💪', 'Eres la persona más resiliente que conozco. Tu fortaleza me inspira cada día.', 'fuerte.jpg')">Fuerte</button>
+                <button class="sorpresa-btn" onclick="mostrarModal('Eres increíblemente FUERTE 💪', 'te considero la mujer más fuerte que conozco tantas cosas que has aguantado y sigues allí, eres tu, eres The Best', 'fuerte.jpg')">Fuerte</button>
             </div>
             
             <!-- Sorpresa 2: Inteligente -->
             <div class="sorpresa-item">
-                <button class="sorpresa-btn" onclick="mostrarModal('Eres tan INTELIGENTE 🤓☝️', 'Tu mente me deslumbra. Siempre tienes las respuestas perfectas (o los mejores memes).', 'inteligente.jpg')">Inteligente</button>
+                <button class="sorpresa-btn" onclick="mostrarModal('Eres tan INTELIGENTE 🤓☝️', 'DIOSMIO eres inteligente la mujer más inteligente que conozco, tus notas son incluso mejores que las mías, sabes resolver cosas LOGICAS no como yo JAJAJ', 'inteligente.jpg')">Inteligente</button>
             </div>
             
             <!-- Sorpresa 3: Hermosa -->
             <div class="sorpresa-item">
-                <button class="sorpresa-btn" onclick="mostrarModal('Eres la más HERMOSA 💜', 'Tu belleza interior y exterior son incomparables. Eres perfecta.', 'hermosa.jpg')">Hermosa</button>
+                <button class="sorpresa-btn" onclick="mostrarModal('Eres la más HERMOSA ❤️', 'Tambiénnn tu hermosura no se compara con absolutamente NADA eres muy linda y preciosa, me hace enamorarme aún más jejejeje encerio eres MUUUY linda', 'hermosa.jpg')">Hermosa</button>
             </div>
             
             <!-- Sorpresa 4: Talentosa -->
             <div class="sorpresa-item">
-                <button class="sorpresa-btn" onclick="mostrarModal('Eres SÚPER TALENTOSA 🤸‍♀️', 'Tu dedicación en la gimnasia es increíble. ¡Te admiro muchísimo!', 'talentosa.jpg')">Talentosa</button>
+                <button class="sorpresa-btn" onclick="mostrarModal('Eres SÚPER TALENTOSA 🤸‍♀️', 'te considero talentosa en tantas cosas unas de ellas es la gimnasia, es increíble como estiras tus músculos JAJAJA e increíble también has de cocinar muy rico.', 'talentosa.jpg')">Talentosa</button>
             </div>
             
             <!-- Sorpresa 5: Deslumbrante -->
             <div class="sorpresa-item">
-                <button class="sorpresa-btn" onclick="mostrarModal('Eres DESLUMBRANTE ✨', 'Tu luz propia ilumina cualquier lugar donde estés. Esos rulos tuyos son únicos y espectaculares.', 'deslumbrante.jpg')">Deslumbrante</button>
+                <button class="sorpresa-btn" onclick="mostrarModal('Eres DESLUMBRANTE ✨', 'para mí Marcela eres una mujer que brilla de más entre todas eres súper única diferente, te veo como está imagen, para mí eres la más deslumbrante de todasss', 'deslumbrante.jpg')">Deslumbrante</button>
             </div>
             
             <!-- Sorpresa 6: Perfecta -->
             <div class="sorpresa-item">
-                <button class="sorpresa-btn" onclick="mostrarModal('Eres PERFECTA PARA MÍ 💜', 'No cambiaría absolutamente nada de ti. Eres mi mundo entero.', 'perfecta.jpg')">Perfecta para mí</button>
+                <button class="sorpresa-btn" onclick="mostrarModal('Eres PERFECTA PARA MÍ ❤️', 'para mí eres perfecta en todo sentido, tus &quot;&quot;&quot;&quot;&quot;defectos&quot;&quot;&quot;&quot;&quot; te hacen más especial aún y esa sonrisita más que nada JSJSAJ, y todo absolutamente todo de ti es perfecto para mí', 'perfecta.jpg')">Perfecta para mí</button>
             </div>
 
+        </div>
+        
+        <!-- Botón para avanzar a la carta quemada -->
+        <button id="verCartaQuemadaButton" class="boton-carta-quemada">Leer la última nota secreta... 📜</button>
+    </section>
+
+    <!-- SECCIÓN CARTA ESTILO QUEMADO (Nueva) -->
+    <section id="carta-quemada-section" class="carta-quemada-section container">
+        <div class="pergamino-quemado">
+            <div class="borde-quemado top"></div>
+            <div class="contenido-pergamino">
+                <p id="textoQuemado">
+                    [Aquí irá el párrafo que me vas a decir luego, listo para cuando me lo pases... ✨]
+                </p>
+            </div>
+            <div class="borde-quemado bottom"></div>
         </div>
     </section>
 
