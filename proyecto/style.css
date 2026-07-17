@@ -433,3 +433,76 @@ button:active {
 
 
 }
+.recuerdo {
+    display: none;
+    text-align: center;
+    padding: 40px;
+}
+
+
+.parque {
+    height: 400px;
+    background: linear-gradient(#111, #000);
+    display:flex;
+    justify-content:center;
+    align-items:end;
+}
+
+
+.siluetas {
+    position:relative;
+    width:300px;
+    height:200px;
+}
+
+
+.persona {
+    width:50px;
+    height:100px;
+    background:#000;
+    border-radius:50px 50px 10px 10px;
+    position:absolute;
+    bottom:50px;
+}
+
+
+.persona1 {
+    left:80px;
+}
+
+
+.persona2 {
+    right:80px;
+}
+
+
+.banca {
+    position:absolute;
+    bottom:30px;
+    left:50px;
+    width:200px;
+    height:20px;
+    background:#050505;
+}
+
+
+.frase-grande {
+    font-size:35px;
+    font-weight:bold;
+    margin-top:60px;
+}
+
+
+.triangulo {
+
+    width:0;
+    height:0;
+    border-left:180px solid transparent;
+    border-right:180px solid transparent;
+    border-top:300px solid rgba(255,255,255,0.05);
+
+    margin:80px auto;
+
+    padding-top:50px;
+
+}
