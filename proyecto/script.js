@@ -2,72 +2,17 @@ const startButton = document.getElementById("startButton");
 
 startButton.addEventListener("click", iniciarCarta);
 
-function iniciarCarta() {
 
-    document.querySelector(".container").style.opacity = "0";
+function iniciarCarta(){
 
-    setTimeout(() => {
+    const container = document.querySelector(".container");
 
-        document.querySelector(".container").innerHTML = `
+    container.style.opacity = "0";
 
-        <div class="intro">
-
-            <p class="intro1">
-                Hay personas que llegan...
-            </p>
-
-            <p class="intro2">
-                y cambian tu mundo por completo.
-            </p>
-
-            <p class="intro3">
-                Tú hiciste eso conmigo. ❤️
-            </p>
-
-        </div>
-
-        `;
-
-        document.querySelector(".container").style.opacity = "1";
-
-        setTimeout(mostrarCarta,7000);
-
-    },800);
-
-}
-function mostrarCarta(){
-
-    document.querySelector(".container").style.opacity="0";
 
     setTimeout(()=>{
 
-        document.querySelector(".container").innerHTML=`
-
-        <div class="mensaje">
-
-            <h2>Hola, My Love ❤️</h2>
-
-            <p id="textoCarta"></p>
-
-        </div>
-
-        `;
-
-        document.querySelector(".container").style.opacity="1";
-
-        i=0;
-
-        escribirCarta();
-
-    },800);
-
-}
-
-    document.querySelector(".container").style.opacity = "0";
-
-    setTimeout(() => {
-
-        document.querySelector(".container").innerHTML = `
+        container.innerHTML = `
 
         <div class="intro">
 
@@ -87,38 +32,58 @@ function mostrarCarta(){
 
         `;
 
-        document.querySelector(".container").style.opacity = "1";
+
+        container.style.opacity="1";
+
 
         setTimeout(mostrarCarta,7000);
 
-    },800);
+
+    },1000);
+
 
 }
 
-    // Desaparece la pantalla principal
-    document.querySelector(".container").style.opacity = "0";
 
-    setTimeout(() => {
 
-        document.querySelector(".container").innerHTML = `
+function mostrarCarta(){
+
+    const container = document.querySelector(".container");
+
+
+    container.style.opacity="0";
+
+
+    setTimeout(()=>{
+
+
+        container.innerHTML=`
 
         <div class="mensaje">
 
-            <h2>Hola, My Marcelaaa❤️</h2>
+            <h2>
+            Hola, My Marcelaaa ❤️
+            </h2>
 
             <p id="textoCarta"></p>
 
         </div>
 
+
         `;
 
-        document.querySelector(".container").style.opacity = "1";
+
+        container.style.opacity="1";
+
 
         escribirCarta();
 
-    }, 1000);
+
+    },1000);
+
 
 }
+
 
 
 const carta = `
@@ -139,13 +104,16 @@ Algo que fuera únicamente para ti.
 
 `;
 
-let i = 0;
+
+let i=0;
+
 
 function escribirCarta(){
 
-    const texto = document.getElementById("textoCarta");
+    const texto=document.getElementById("textoCarta");
 
-    if(i < carta.length){
+
+    if(i<carta.length){
 
         texto.innerHTML += carta.charAt(i);
 
