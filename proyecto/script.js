@@ -129,8 +129,13 @@ function escribirCarta() {
             behavior: "smooth"
         });
 
-        setTimeout(escribirCarta, 45);
+      setTimeout(escribirCarta,45);
 
+} else {
+
+    mostrarBotonRecuerdo();
+
+}
     }
 
 }
@@ -142,5 +147,18 @@ function mostrarRecuerdo(){
         top: document.getElementById("recuerdo").offsetTop,
         behavior:"smooth"
     });
+
+}
+function mostrarBotonRecuerdo(){
+
+    const boton = document.createElement("button");
+
+    boton.innerHTML = "Un recuerdo que nunca olvido ❤️";
+
+    boton.className = "boton-recuerdo";
+
+    boton.onclick = mostrarRecuerdo;
+
+    document.querySelector(".mensaje").appendChild(boton);
 
 }
