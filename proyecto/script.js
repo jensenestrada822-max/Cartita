@@ -1,8 +1,5 @@
-// Referencias a los elementos del DOM
 const startButton = document.getElementById("startButton");
 const initialPage = document.getElementById("initial-page");
-const recuerdoPage = document.getElementById("recuerdo");
-const verCartaButton = document.getElementById("verCartaButton");
 const finalCardPage = document.getElementById("final-card-section");
 const verSorpresasButton = document.getElementById("verSorpresasButton");
 const sorpresasPage = document.getElementById("sorpresas-section");
@@ -13,68 +10,63 @@ const modalTitle = document.getElementById("modalTitle");
 const modalImage = document.getElementById("modalImage");
 const modalText = document.getElementById("modalText");
 
-// Texto de la carta final (Escritura automática)
+// TEXTO CORREGIDO (Risas cambiadas y palabra "digital" removida)
 const cartaTextoCompleto = `
-Hola, My Marcelaaa ❤️
+Si estás leyendo esto...
 
-Si estás leyendo esto, es porque decidí hacer algo diferente.
+es porque decidí hacer algo diferente.
 
 No compré un regalo. No copié una carta de Internet. Quise crear algo desde cero. Algo que fuera únicamente para ti.
 
-me estoy estresando MUCHO por esto jajaja (como te digo, estoy aprendiendo a programar :))
+me estoy estresando MUCHO por esto JAJAAJAJ (como te digo, estoy aprendiendo a programar :))
 
 Pero vela completa, i lv YOU.
 
-Como no te puedo dar una presencial, espero que disfrutes este pequeño detalle digital.
+Como no te puedo dar una presencial, espero que disfrutes este pequeño detalle.
 
-❤️
+💜
 `;
 
-// Variables para el control de la escritura
 let i = 0;
-const typingSpeed = 50; // milisegundos por carácter
+const typingSpeed = 45; 
 
-// Función para cambiar de sección de forma suave (Fade out - Fade in)
+// FUNCIÓN CORREGIDA: Ahora asegura que los bloques se muestren/oculten bien con 'flex'
 function cambiarSeccion(seccionActual, seccionSiguiente) {
-    seccionActual.classList.remove('active');
+    seccionActual.style.opacity = "0";
     setTimeout(() => {
-        seccionSiguiente.classList.add('active');
-        // Scroll automático al inicio de la nueva sección
-        window.scrollTo({ top: seccionSiguiente.offsetTop, behavior: "smooth" });
-    }, 1000); // Mismo tiempo que la transición CSS (1s)
+        seccionActual.classList.remove('active');
+        seccionActual.style.display = "none"; // Fuerza a que desaparezca por completo
+        
+        seccionSiguiente.style.display = "flex"; // Activa el bloque visualmente
+        setTimeout(() => {
+            seccionSiguiente.classList.add('active');
+            seccionSiguiente.style.opacity = "1";
+            window.scrollTo({ top: seccionSiguiente.offsetTop, behavior: "smooth" });
+        }, 50);
+    }, 1000); 
 }
 
-// 1. Iniciar experiencia
+// Al dar clic en comenzar, va DIRECTO a la carta final
 startButton.addEventListener("click", () => {
-    cambiarSeccion(initialPage, recuerdoPage);
+    cambiarSeccion(initialPage, finalCardPage);
+    setTimeout(iniciarEscrituraCarta, 1100); 
 });
 
-// 2. Ver la carta
-verCartaButton.addEventListener("click", () => {
-    cambiarSeccion(recuerdoPage, finalCardPage);
-    // Esperar a que la animación de cambio termine para empezar a escribir
-    setTimeout(iniciarEscrituraCarta, 1000); 
-});
-
-// 3. Ver las sorpresas (Este botón aparece al final de la escritura)
 verSorpresasButton.addEventListener("click", () => {
     cambiarSeccion(finalCardPage, sorpresasPage);
 });
 
-// Función para escribir la carta carácter por carácter
 function iniciarEscrituraCarta() {
     const textoCarta = document.getElementById("textoCarta");
     if (i < cartaTextoCompleto.length) {
-        // Soporte para corazones rojos (puedes añadir otros caracteres especiales)
-        if (cartaTextoCompleto.charAt(i) === '❤️') {
-            textoCarta.innerHTML += '<span class="heart">❤️</span>';
-            i++; // Saltar el siguiente carácter que forma parte del emoji
+        if (cartaTextoCompleto.substring(i, i + 2) === '💜') {
+            textoCarta.innerHTML += '<span class="heart">💜</span>';
+            i += 2; 
         } else {
             textoCarta.innerHTML += cartaTextoCompleto.charAt(i);
+            i++;
         }
-        i++;
         
-        // Mantener el scroll al final mientras se escribe
         window.scrollTo({
             top: document.body.scrollHeight,
             behavior: "smooth"
@@ -82,35 +74,28 @@ function iniciarEscrituraCarta() {
         
         setTimeout(iniciarEscrituraCarta, typingSpeed);
     } else {
-        // Al final de la carta, mostrar el botón de sorpresas
         finalizarCarta();
     }
 }
 
 function finalizarCarta() {
-    // Asegurarse de que el scroll esté al final
     window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
-    // Mostrar el botón con la clase CSS para que se vea
     verSorpresasButton.classList.remove('hidden');
 }
 
-// ===================================
-// GESTIÓN DEL MODAL DE SORPRESAS
-// ===================================
-
+// MOSTRAR VENTANAS CON IMÁGENES
 function mostrarModal(titulo, texto, rutaImagen) {
     modalTitle.innerHTML = titulo;
     modalText.innerHTML = texto;
-    modalImage.src = rutaImagen; // El navegador buscará este archivo en la misma carpeta
-    modalImage.alt = "Imagen de " + titulo; // Texto alternativo
+    modalImage.src = rutaImagen; 
+    modalImage.alt = titulo; 
     
-    // Fallback: Si no encuentra la imagen (porque no la has subido), ocultar el elemento img
     modalImage.onerror = function() {
-        modalImage.classList.add('hidden');
-        console.warn("No se pudo cargar la imagen: " + rutaImagen + ". Asegúrate de subirla a GitHub.");
+        modalImage.style.display = 'none';
+        console.warn("Revisa si subiste la imagen con el nombre exacto: " + rutaImagen);
     };
     modalImage.onload = function() {
-        modalImage.classList.remove('hidden');
+        modalImage.style.display = 'inline-block';
     }
 
     modal.style.display = "block";
@@ -120,9 +105,9 @@ function cerrarModal() {
     modal.style.display = "none";
 }
 
-// Cerrar el modal si se hace clic fuera del contenido
 window.onclick = function(event) {
     if (event.target == modal) {
         cerrarModal();
     }
 }
+
