@@ -84,7 +84,13 @@ button:hover {
     transform: scale(1.1);
     box-shadow: 0 0 35px #ff5caa;
 }
+button:active {
 
+    transform: scale(0.95);
+
+    box-shadow: 0 0 45px #ff5caa;
+
+}
 
 /* Animación de entrada */
 @keyframes aparecer {
