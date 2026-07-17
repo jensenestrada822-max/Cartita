@@ -28,9 +28,10 @@ function iniciarCarta(){
                 asi que disfrutala 
             </p>
 
-            </p class"intro4">
+            <p class="intro4">
             como no te puedo dar una presencial,
             asi que disfrutala :))
+            </p>
 
         </div>
 
