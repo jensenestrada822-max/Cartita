@@ -112,18 +112,23 @@ Algo que fuera únicamente para ti.
 let i=0;
 
 
-function escribirCarta(){
+function escribirCarta() {
 
-    const texto=document.getElementById("textoCarta");
+    const texto = document.getElementById("textoCarta");
 
-
-    if(i<carta.length){
+    if (i < carta.length) {
 
         texto.innerHTML += carta.charAt(i);
 
         i++;
 
-        setTimeout(escribirCarta,45);
+        // Hace que la página baje automáticamente
+        window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: "smooth"
+        });
+
+        setTimeout(escribirCarta, 45);
 
     }
 
