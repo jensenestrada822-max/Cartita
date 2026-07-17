@@ -9,7 +9,9 @@ body {
     background: #090014;
     color: white;
     font-family: 'Poppins', sans-serif;
-    overflow: hidden;
+
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 /* Fondo de estrellas */
