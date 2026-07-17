@@ -17,16 +17,20 @@ function iniciarCarta(){
         <div class="intro">
 
             <p class="intro1">
-                Hay personas que llegan...
+                Bienvenida a esta carta 
             </p>
 
             <p class="intro2">
-                y cambian tu mundo por completo.
+                me estoy estresando MUCHO por esto 
             </p>
 
             <p class="intro3">
-                Tú hiciste eso conmigo. ❤️
+                asi que disfrutala 
             </p>
+
+            </p class"intro4">
+            como no te puedo dar una presencial,
+            asi que disfrutala :))
 
         </div>
 
