@@ -133,3 +133,17 @@ function escribirCarta() {
     }
 
 }
+<script>
+
+function mostrarRecuerdo(){
+
+    document.getElementById("recuerdo").style.display="block";
+
+    window.scrollTo({
+        top:document.getElementById("recuerdo").offsetTop,
+        behavior:"smooth"
+    });
+
+}
+
+</script>
