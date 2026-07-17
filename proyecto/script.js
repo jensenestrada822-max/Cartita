@@ -25,7 +25,7 @@ function iniciarCarta(){
             </p>
 
             <p class="intro3">
-                asi que disfrutala 
+                Vela completa, i lv YOU
             </p>
 
             <p class="intro4">
