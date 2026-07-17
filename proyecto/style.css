@@ -112,9 +112,57 @@ button:active {
 }
 
 /* Carta */
-.mensaje{
+/* =========================
+   CARTA PRINCIPAL
+   ========================= */
 
-    max-width:800px;
+.mensaje {
+
+    max-width: 800px;
+
+    width: 85%;
+
+    padding: 45px;
+
+    background: rgba(255,255,255,0.08);
+
+    border: 1px solid rgba(255,182,217,0.4);
+
+    border-radius: 25px;
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+    0 0 30px rgba(255,105,180,0.25),
+    inset 0 0 30px rgba(255,255,255,0.05);
+
+    animation: aparecerCarta 2s ease forwards;
+
+}
+@keyframes aparecerCarta {
+
+
+    from {
+
+        opacity:0;
+
+        transform:
+        translateY(40px)
+        scale(0.95);
+
+    }
+
+
+    to {
+
+        opacity:1;
+
+        transform:
+        translateY(0)
+        scale(1);
+
+    }
+
 
 }
 
