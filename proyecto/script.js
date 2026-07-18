@@ -12,7 +12,7 @@ const modalTitle = document.getElementById("modalTitle");
 const modalImage = document.getElementById("modalImage");
 const modalText = document.getElementById("modalText");
 
-// TEXTO CORREGIDO (Nuevos cambios aplicados perfectamente)
+// TEXTO CARTA PRINCIPAL
 const cartaTextoCompleto = `
 Si estás leyendo esto...
 
@@ -29,7 +29,11 @@ Como no te puedo dar una presencial, espero que disfrutes este pequeño detalle.
 ❤️ :)
 `;
 
+// TU PÁRRAFO FINAL PARA LA CARTA QUEMADA
+const textoCartaQuemada = `Marcela te hago está carta para no hacer las típicas palabras diarias que seguro te cansan, quiero demostrar mi amor por ti y por dónde más por algo que me apasiona, y puede que yo no sea el mejor ni me parezca a esos tipazos de los animes peeeero, puedo darte TOOOOOODOo el amor que tengo me encanta pasar tiempo contigo por dónde sea, hablar contigo, me encanta decir que me encantas JAJAJA, me gustas de una forma que no puedo explicar, son tantas cosas que más que siento por ti, que sería imposible explicarlo, amo tu sonrisita de las más bellas del universoo en serio tengo algo con eso JAJAJA tuu mirada, todo absolutamente todo de ti me causa un sentimiento que nadie más hace, aveces a como te refieres Ami cuando me dijiste JSJAJA "teamominiñoduermeperro" a demás de reírme claro JAJAJS sentí algo muy especial una sensación de felicidad que hacía olvidarme de TODO lo malo no pude dormir esa noche y yo decía "oye esos apodos disq mi niño dan cringe" pero WTFF me hizo sentir tan especial TU eres especial, y bueno nada, gracias por existir Marcela, encerio, seguro te haré más de estás prontito, y bueno sin más nada que decir gracias por tu tiempo, Te amo. ♥️`;
+
 let i = 0;
+let j = 0;
 const typingSpeed = 45; 
 
 function cambiarSeccion(seccionActual, seccionSiguiente) {
@@ -47,7 +51,7 @@ function cambiarSeccion(seccionActual, seccionSiguiente) {
     }, 1000); 
 }
 
-// Navegación fluida
+// Navegación
 startButton.addEventListener("click", () => {
     cambiarSeccion(initialPage, finalCardPage);
     setTimeout(iniciarEscrituraCarta, 1100); 
@@ -59,12 +63,13 @@ verSorpresasButton.addEventListener("click", () => {
 
 verCartaQuemadaButton.addEventListener("click", () => {
     cambiarSeccion(sorpresasPage, cartaQuemadaPage);
+    setTimeout(iniciarEscrituraQuemada, 1100); // Inicia el efecto en el pergamino
 });
 
+// Escritura carta 1
 function iniciarEscrituraCarta() {
     const textoCarta = document.getElementById("textoCarta");
     if (i < cartaTextoCompleto.length) {
-        // Soporte correcto para emojis de corazones rojos
         if (cartaTextoCompleto.substring(i, i + 2) === '❤️') {
             textoCarta.innerHTML += '<span class="heart">❤️</span>';
             i += 2; 
@@ -72,12 +77,7 @@ function iniciarEscrituraCarta() {
             textoCarta.innerHTML += cartaTextoCompleto.charAt(i);
             i++;
         }
-        
-        window.scrollTo({
-            top: document.body.scrollHeight,
-            behavior: "smooth"
-        });
-        
+        window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
         setTimeout(iniciarEscrituraCarta, typingSpeed);
     } else {
         finalizarCarta();
@@ -89,7 +89,18 @@ function finalizarCarta() {
     verSorpresasButton.classList.remove('hidden');
 }
 
-// MOSTRAR VENTANAS CON IMÁGENES
+// Escritura del pergamino final
+function iniciarEscrituraQuemada() {
+    const textoQuemado = document.getElementById("textoQuemado");
+    if (j < textoCartaQuemada.length) {
+        textoQuemado.innerHTML += textoCartaQuemada.charAt(j);
+        j++;
+        window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+        setTimeout(iniciarEscrituraQuemada, 35); // Un poquitín más rápido para que no sea eterno
+    }
+}
+
+// Ventanas emergentes
 function mostrarModal(titulo, texto, rutaImagen) {
     modalTitle.innerHTML = titulo;
     modalText.innerHTML = texto;
@@ -98,12 +109,11 @@ function mostrarModal(titulo, texto, rutaImagen) {
     
     modalImage.onerror = function() {
         modalImage.style.display = 'none';
-        console.warn("Revisa si subiste la imagen con el nombre exacto: " + rutaImagen);
+        console.warn("Imagen no encontrada: " + rutaImagen);
     };
     modalImage.onload = function() {
         modalImage.style.display = 'inline-block';
     }
-
     modal.style.display = "block";
 }
 
