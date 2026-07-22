@@ -8,7 +8,7 @@
 body{
     background:linear-gradient(180deg,#060414,#12002c,#1f0d45);
     min-height:100vh;
-    overflow:hidden;
+    overflow-x:hidden;
     color:white;
 }
 
