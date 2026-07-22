@@ -1,107 +1,84 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para Marcelaaaaaa 💜</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Fuentes elegantes -->
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    <title>FOR YOUUU ♡</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-    <!-- Fondo de estrellas en tonos morados -->
-    <div class="stars-container">
-        <div id="stars"></div>
-        <div id="stars2"></div>
-        <div id="stars3"></div>
-    </div>
+    <div class="container">
+        <header>
+            <h1>FOR YOUUU ♡</h1>
+            <p>Canciones que me recuerdan a ti y lo que significas para mí</p>
+        </header>
 
-    <!-- Luna Fija con brillo morado/lila -->
-    <div class="moon"></div>
+        <div class="songs-list">
 
-    <!-- PÁGINA INICIAL -->
-    <div class="container active" id="initial-page">
-        <h1>For My Love ❤️</h1>
-        <p class="subtitle">te hize un detallito ya que estoy aprendiendo a programar jejej :)</p>
-        <button id="startButton">Comenzar ✨</button>
-    </div>
+            <!-- CANCIÓN 1 -->
+            <div class="song-card">
+                <div class="spotify-player">
+                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=300&auto=format&fit=crop" alt="Portada Canción 1" class="album-art">
+                    <div class="song-info">
+                        <div class="song-title">Nombre de la Canción 1</div>
+                        <div class="artist-name">Nombre del Artista</div>
+                        <!-- Cambia "cancion1.mp3" por el link o nombre de tu archivo -->
+                        <audio controls src="cancion1.mp3"></audio>
+                    </div>
+                </div>
+                <div class="dedication-box">
+                    <div class="dedication-title">✦ ¿Por qué te la dedico?</div>
+                    <div class="dedication-text">
+                        Escribe aquí la razón especial por la que le dedicas esta primera canción.
+                    </div>
+                </div>
+            </div>
 
-    <!-- SECCIÓN DE LA CARTA FINAL -->
-    <section id="final-card-section" class="final-card container">
-        <div class="mensaje" id="mensajeContainer">
-            <h2>Para mai love ❤️ :)</h2>
-            <p id="textoCarta"></p>
-            <!-- Botón de Sorpresas que aparecerá al final -->
-            <button id="verSorpresasButton" class="hidden boton-sorpresas">¿Qué eres para mí? 💖</button>
+            <!-- CANCIÓN 2 -->
+            <div class="song-card">
+                <div class="spotify-player">
+                    <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=300&auto=format&fit=crop" alt="Portada Canción 2" class="album-art">
+                    <div class="song-info">
+                        <div class="song-title">Nombre de la Canción 2</div>
+                        <div class="artist-name">Nombre del Artista</div>
+                        <audio controls src="cancion2.mp3"></audio>
+                    </div>
+                </div>
+                <div class="dedication-box">
+                    <div class="dedication-title">✦ ¿Por qué te la dedico?</div>
+                    <div class="dedication-text">
+                        Escribe aquí el motivo de esta segunda canción.
+                    </div>
+                </div>
+            </div>
+
+            <!-- CANCIÓN 3 -->
+            <div class="song-card">
+                <div class="spotify-player">
+                    <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&auto=format&fit=crop" alt="Portada Canción 3" class="album-art">
+                    <div class="song-info">
+                        <div class="song-title">Nombre de la Canción 3</div>
+                        <div class="artist-name">Nombre del Artista</div>
+                        <audio controls src="cancion3.mp3"></audio>
+                    </div>
+                </div>
+                <div class="dedication-box">
+                    <div class="dedication-title">✦ ¿Por qué te la dedico?</div>
+                    <div class="dedication-text">
+                        Escribe aquí la razón de la tercera canción.
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </section>
 
-    <!-- SECCIÓN DE SORPRESAS -->
-    <section id="sorpresas-section" class="sorpresas-section container">
-        <h2>Lo que veo en ti 😍</h2>
-        <div class="sorpresas-grid">
-            
-            <!-- Sorpresa 1: Fuerte -->
-            <div class="sorpresa-item">
-                <button class="sorpresa-btn" onclick="mostrarModal('Eres increíblemente FUERTE 💪', 'te considero la mujer más fuerte que conozco tantas cosas que has aguantado y sigues allí, eres tu, eres The Best', 'fuerte.jpg')">Fuerte</button>
-            </div>
-            
-            <!-- Sorpresa 2: Inteligente -->
-            <div class="sorpresa-item">
-                <button class="sorpresa-btn" onclick="mostrarModal('Eres tan INTELIGENTE 🤓☝️', 'DIOSMIO eres inteligente la mujer más inteligente que conozco, tus notas son incluso mejores que las mías, sabes resolver cosas LOGICAS no como yo JAJAJ', 'inteligente.jpg')">Inteligente</button>
-            </div>
-            
-            <!-- Sorpresa 3: Hermosa -->
-            <div class="sorpresa-item">
-                <button class="sorpresa-btn" onclick="mostrarModal('Eres la más HERMOSA ❤️', 'Tambiénnn tu hermosura no se compara con absolutamente NADA eres muy linda y preciosa, me hace enamorarme aún más jejejeje encerio eres MUUUY linda', 'hermosa.jpg')">Hermosa</button>
-            </div>
-            
-            <!-- Sorpresa 4: Talentosa -->
-            <div class="sorpresa-item">
-                <button class="sorpresa-btn" onclick="mostrarModal('Eres SÚPER TALENTOSA 🤸‍♀️', 'te considero talentosa en tantas cosas unas de ellas es la gimnasia, es increíble como estiras tus músculos JAJAJA e increíble también has de cocinar muy rico.', 'talentosa.jpg')">Talentosa</button>
-            </div>
-            
-            <!-- Sorpresa 5: Deslumbrante -->
-            <div class="sorpresa-item">
-                <button class="sorpresa-btn" onclick="mostrarModal('Eres DESLUMBRANTE ✨', 'para mí Marcela eres una mujer que brilla de más entre todas eres súper única diferente, te veo como está imagen, para mí eres la más deslumbrante de todasss', 'deslumbrante.jpg')">Deslumbrante</button>
-            </div>
-            
-            <!-- Sorpresa 6: Perfecta -->
-            <div class="sorpresa-item">
-                <button class="sorpresa-btn" onclick="mostrarModal('Eres PERFECTA PARA MÍ ❤️', 'para mí eres perfecta en todo sentido, tus &quot;&quot;&quot;&quot;&quot;defectos&quot;&quot;&quot;&quot;&quot; te hacen más especial aún y esa sonrisita más que nada JSJSAJ, y todo absolutamente todo de ti es perfecto para mí', 'perfecta.jpg')">Perfecta para mí</button>
-            </div>
-
-        </div>
-        
-        <!-- Botón modificado: ya no dice "secreta" -->
-        <button id="verCartaQuemadaButton" class="boton-carta-quemada">Leer la última nota... 📜</button>
-    </section>
-
-    <!-- SECCIÓN CARTA ESTILO QUEMADO -->
-    <section id="carta-quemada-section" class="carta-quemada-section container">
-        <div class="pergamino-quemado">
-            <div class="borde-quemado top"></div>
-            <div class="contenido-pergamino">
-                <p id="textoQuemado"></p>
-            </div>
-            <div class="borde-quemado bottom"></div>
-        </div>
-    </section>
-
-    <!-- Ventana flotante (Modal) para las Sorpresas -->
-    <div id="modalSorpresa" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="cerrarModal()">&times;</span>
-            <h3 id="modalTitle"></h3>
-            <img id="modalImage" src="" alt="Sorpresa para Marcela">
-            <p id="modalText"></p>
-        </div>
+        <footer>
+            Hecho con <span class="heart">♥</span> especialmente para ti
+        </footer>
     </div>
 
     <script src="script.js"></script>
 </body>
-
 </html>
