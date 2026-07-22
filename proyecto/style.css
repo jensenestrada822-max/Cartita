@@ -16,22 +16,10 @@ body{
 
 #stars{
     position:fixed;
-    width:100%;
-    height:100%;
-    background-image:
-    radial-gradient(white 1px,transparent 1px),
-    radial-gradient(#b388ff 1px,transparent 1px),
-    radial-gradient(white 2px,transparent 2px);
-
-    background-size:
-    80px 80px,
-    140px 140px,
-    220px 220px;
-
-    animation:starsMove 90s linear infinite;
-    opacity:.55;
-    filter:blur(.5px);
+    inset:0;
     z-index:-1;
+    pointer-events:none;
+    opacity:.55;
 }
 
 @keyframes starsMove{
