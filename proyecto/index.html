@@ -9,74 +9,71 @@
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <h1>FOR YOUUU ♡</h1>
-            <p>Canciones que me recuerdan a ti y lo que significas para mí</p>
-        </header>
+    <!-- Fondo de noche estrellada borrosa -->
+    <div class="starry-bg"></div>
+    <div class="stars-layer"></div>
 
-        <div class="songs-list">
+    <!-- PANTALLA INICIAL (WELCOME SCREEN) -->
+    <div id="welcome-screen" class="screen active">
+        <div class="welcome-content">
+            <div class="heart-icon">💜</div>
+            <h1>FOR YOUUU</h1>
+            <p>Tengo algo especial para ti...</p>
+            <button id="start-btn" class="glow-button">Abrir regalo ✨</button>
+        </div>
+    </div>
 
-            <!-- CANCIÓN 1 -->
-            <div class="song-card">
-                <div class="spotify-player">
-                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=300&auto=format&fit=crop" alt="Portada Canción 1" class="album-art">
-                    <div class="song-info">
-                        <div class="song-title">Nombre de la Canción 1</div>
-                        <div class="artist-name">Nombre del Artista</div>
-                        <!-- Cambia "cancion1.mp3" por el link o nombre de tu archivo -->
-                        <audio controls src="cancion1.mp3"></audio>
-                    </div>
+    <!-- REPRODUCTOR ESTILO SPOTIFY -->
+    <div id="player-screen" class="screen">
+        <div class="mobile-frame">
+            
+            <div class="top-bar">
+                <span class="icon">⌄</span>
+                <span class="playlist-title">Nuestra Playlist</span>
+                <span class="icon">•••</span>
+            </div>
+
+            <div class="cover-container">
+                <img id="album-cover" src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=500&auto=format&fit=crop" alt="Portada de la canción">
+            </div>
+
+            <div class="song-header">
+                <div class="song-details">
+                    <h2 id="song-title">NIGHT DANCER</h2>
+                    <p id="artist-name">imase</p>
                 </div>
-                <div class="dedication-box">
-                    <div class="dedication-title">✦ ¿Por qué te la dedico?</div>
-                    <div class="dedication-text">
-                        Escribe aquí la razón especial por la que le dedicas esta primera canción.
-                    </div>
+                <button class="heart-btn" id="like-btn">♥</button>
+            </div>
+
+            <div class="progress-container">
+                <audio id="audio-player" src="cancion1.mp3"></audio>
+                <input type="range" id="seek-bar" value="0" max="100">
+                <div class="time-labels">
+                    <span id="current-time">0:00</span>
+                    <span id="duration-time">3:30</span>
                 </div>
             </div>
 
-            <!-- CANCIÓN 2 -->
-            <div class="song-card">
-                <div class="spotify-player">
-                    <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=300&auto=format&fit=crop" alt="Portada Canción 2" class="album-art">
-                    <div class="song-info">
-                        <div class="song-title">Nombre de la Canción 2</div>
-                        <div class="artist-name">Nombre del Artista</div>
-                        <audio controls src="cancion2.mp3"></audio>
-                    </div>
-                </div>
-                <div class="dedication-box">
-                    <div class="dedication-title">✦ ¿Por qué te la dedico?</div>
-                    <div class="dedication-text">
-                        Escribe aquí el motivo de esta segunda canción.
-                    </div>
-                </div>
+            <div class="player-controls">
+                <button class="control-btn sub-btn">🔀</button>
+                <button class="control-btn" id="prev-btn">⏮</button>
+                <button class="control-btn play-main-btn" id="play-pause-btn">▶</button>
+                <button class="control-btn" id="next-song-btn">⏭</button>
+                <button class="control-btn sub-btn">🔁</button>
             </div>
 
-            <!-- CANCIÓN 3 -->
-            <div class="song-card">
-                <div class="spotify-player">
-                    <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&auto=format&fit=crop" alt="Portada Canción 3" class="album-art">
-                    <div class="song-info">
-                        <div class="song-title">Nombre de la Canción 3</div>
-                        <div class="artist-name">Nombre del Artista</div>
-                        <audio controls src="cancion3.mp3"></audio>
-                    </div>
+            <div class="dedication-card">
+                <div class="dedication-header">
+                    <span>✦ POR QUÉ TE LA DEDICO</span>
                 </div>
-                <div class="dedication-box">
-                    <div class="dedication-title">✦ ¿Por qué te la dedico?</div>
-                    <div class="dedication-text">
-                        Escribe aquí la razón de la tercera canción.
-                    </div>
-                </div>
+                <p id="dedication-text" class="dedication-text">
+                    Esta es la razón especial por la que te dedico esta canción.
+                </p>
             </div>
+
+            <button id="next-page-btn" class="next-card-btn">Siguiente canción ➔</button>
 
         </div>
-
-        <footer>
-            Hecho con <span class="heart">♥</span> especialmente para ti
-        </footer>
     </div>
 
     <script src="script.js"></script>
