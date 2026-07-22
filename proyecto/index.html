@@ -3,79 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FOR YOUUU ♡</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>For You 💜</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-    <!-- Fondo de noche estrellada borrosa -->
-    <div class="starry-bg"></div>
-    <div class="stars-layer"></div>
+<div id="stars"></div>
 
-    <!-- PANTALLA INICIAL (WELCOME SCREEN) -->
-    <div id="welcome-screen" class="screen active">
-        <div class="welcome-content">
-            <div class="heart-icon">💜</div>
-            <h1>FOR YOUUU</h1>
-            <p>Tengo algo especial para ti...</p>
-            <button id="start-btn" class="glow-button">Abrir regalo ✨</button>
-        </div>
-    </div>
+<!-- Pantalla de inicio -->
 
-    <!-- REPRODUCTOR ESTILO SPOTIFY -->
-    <div id="player-screen" class="screen">
-        <div class="mobile-frame">
-            
-            <div class="top-bar">
-                <span class="icon">⌄</span>
-                <span class="playlist-title">Nuestra Playlist</span>
-                <span class="icon">•••</span>
-            </div>
+<section id="home" class="screen active">
 
-            <div class="cover-container">
-                <img id="album-cover" src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=500&auto=format&fit=crop" alt="Portada de la canción">
-            </div>
+    <h1>FOR YOUUU 💜</h1>
 
-            <div class="song-header">
-                <div class="song-details">
-                    <h2 id="song-title">NIGHT DANCER</h2>
-                    <p id="artist-name">imase</p>
-                </div>
-                <button class="heart-btn" id="like-btn">♥</button>
-            </div>
+    <p>
+        Hice esto especialmente para ti...
+    </p>
 
-            <div class="progress-container">
-                <audio id="audio-player" src="cancion1.mp3"></audio>
-                <input type="range" id="seek-bar" value="0" max="100">
-                <div class="time-labels">
-                    <span id="current-time">0:00</span>
-                    <span id="duration-time">3:30</span>
-                </div>
-            </div>
+    <button onclick="startPlaylist()">
+        Abrir 💜
+    </button>
 
-            <div class="player-controls">
-                <button class="control-btn sub-btn">🔀</button>
-                <button class="control-btn" id="prev-btn">⏮</button>
-                <button class="control-btn play-main-btn" id="play-pause-btn">▶</button>
-                <button class="control-btn" id="next-song-btn">⏭</button>
-                <button class="control-btn sub-btn">🔁</button>
-            </div>
+</section>
 
-            <div class="dedication-card">
-                <div class="dedication-header">
-                    <span>✦ POR QUÉ TE LA DEDICO</span>
-                </div>
-                <p id="dedication-text" class="dedication-text">
-                    Esta es la razón especial por la que te dedico esta canción.
-                </p>
-            </div>
 
-            <button id="next-page-btn" class="next-card-btn">Siguiente canción ➔</button>
+<!-- Canción 1 -->
 
-        </div>
-    </div>
+<section class="screen song">
 
-    <script src="script.js"></script>
+<div class="card">
+
+<img src="images/californica.jpg">
+
+<h2>CALIFÓRNICA</h2>
+
+<h3>La Gusana Ciega - Monarca</h3>
+
+<audio controls>
+<source src="music/californica.mp3">
+</audio>
+
+<div class="message">
+
+Porqueee vo que te gustaría
+que te la dedicaran así
+que te la dedico yoppp 💜
+
+</div>
+
+<button onclick="nextSong()">
+
+Siguiente →
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- Canción 2 -->
+
+<section class="screen song">
+
+<div class="card">
+
+<img src="images/frances.jpg">
+
+<h2>FRANCÉS LIMÓN</h2>
+
+<h3>Enanitos Verdes</h3>
+
+<audio controls>
+
+<source src="music/frances.mp3">
+
+</audio>
+
+<div class="message">
+
+Está por lo mismooo
+y porque en tus ojos
+veo el color de mi vida. 💜
+
+</div>
+
+<button onclick="nextSong()">
+
+Siguiente →
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- Canción 3 -->
+
+<section class="screen song">
+
+<div class="card">
+
+<img src="images/something.jpg">
+
+<h2>Something About You</h2>
+
+<h3>feat. Dent May</h3>
+
+<audio controls>
+
+<source src="music/something.mp3">
+
+</audio>
+
+<div class="message">
+
+Porque eres como un sueño,
+para mí la mujer más hermosa
+que he visto. 💜
+
+</div>
+
+<button onclick="nextSong()">
+
+Final 💜
+
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- Pantalla final -->
+
+<section id="end" class="screen">
+
+<h1>💜</h1>
+
+<h2>
+
+Gracias por escuchar estas canciones.
+
+</h2>
+
+<p>
+
+Espero que cada vez que las escuches
+recuerdes cuánto significas para mí.
+
+</p>
+
+<button onclick="restart()">
+
+Escuchar otra vez
+
+</button>
+
+</section>
+
+<script src="script.js"></script>
+
 </body>
 </html>
